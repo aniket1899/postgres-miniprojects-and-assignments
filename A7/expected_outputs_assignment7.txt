@@ -1,0 +1,572 @@
+CREATE DATABASE
+Problem 6
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+INSERT 0 11
+CREATE FUNCTION
+CREATE FUNCTION
+       topologicalsort        
+------------------------------
+ {1,2,3,4,5,7,9,10,12,6,11,8}
+(1 row)
+
+DROP TABLE
+DROP TABLE
+DROP TABLE
+Problem 7 -- Practice problem
+CREATE TABLE
+INSERT 0 11
+CREATE TABLE
+CREATE FUNCTION
+CREATE FUNCTION
+ m  | n  
+----+----
+  1 |  1
+  2 |  2
+  2 |  3
+  2 |  4
+  3 |  2
+  3 |  3
+  3 |  4
+  4 |  2
+  4 |  3
+  4 |  4
+  5 |  5
+  5 |  6
+  5 |  7
+  5 |  8
+  6 |  5
+  6 |  6
+  6 |  7
+  6 |  8
+  7 |  5
+  7 |  6
+  7 |  7
+  7 |  8
+  8 |  5
+  8 |  6
+  8 |  7
+  8 |  8
+  9 |  9
+  9 | 10
+  9 | 11
+ 10 |  9
+ 10 | 10
+ 10 | 11
+ 11 |  9
+ 11 | 10
+ 11 | 11
+ 12 | 12
+(36 rows)
+
+DROP TABLE
+Problem 8
+CREATE TABLE
+INSERT 0 10
+CREATE TABLE
+DO
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE TABLE
+DELETE 0
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE FUNCTION
+ index | value 
+-----+-----
+   1 |   0
+   2 |   1
+   3 |   1
+   4 |   2
+   5 |   3
+   6 |   3
+   7 |   7
+   8 |   8
+   9 |   9
+  10 |  11
+(10 rows)
+
+Problem 9
+CREATE TABLE
+INSERT 0 14
+CREATE TABLE
+CREATE FUNCTION
+CREATE FUNCTION
+ source | target | distance 
+--------+--------+----------
+      0 |      0 |        0
+      0 |      1 |        2
+      0 |      2 |        9
+      0 |      3 |        5
+      0 |      4 |        9
+      1 |      0 |        2
+      1 |      1 |        0
+      1 |      2 |        7
+      1 |      3 |        3
+      1 |      4 |        7
+      2 |      0 |        9
+      2 |      1 |        7
+      2 |      2 |        0
+      2 |      3 |        4
+      2 |      4 |        6
+      3 |      0 |        5
+      3 |      1 |        3
+      3 |      2 |        4
+      3 |      3 |        0
+      3 |      4 |        5
+      4 |      0 |        9
+      4 |      1 |        7
+      4 |      2 |        6
+      4 |      3 |        5
+      4 |      4 |        0
+(25 rows)
+
+Problem 10
+CREATE TABLE
+CREATE TABLE
+INSERT 0 11
+INSERT 0 5
+Problem 10.a
+CREATE FUNCTION
+ p  | recursiveaggregatedweight 
+----+---------------------------
+  1 |                       144
+  2 |                        34
+  3 |                        34
+  4 |                         4
+  5 |                        30
+  6 |                         1
+  7 |                        17
+  8 |                         4
+  9 |                        15
+ 10 |                         1
+ 11 |                         5
+ 12 |                         3
+(12 rows)
+
+Problem 10.b
+CREATE TABLE
+DELETE 0
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE FUNCTION
+ p  | nonrecursiveaggregatedweight 
+----+------------------------------
+  1 |                          144
+  2 |                           34
+  3 |                           34
+  4 |                            4
+  5 |                           30
+  6 |                            1
+  7 |                           17
+  8 |                            4
+  9 |                           15
+ 10 |                            1
+ 11 |                            5
+ 12 |                            3
+(12 rows)
+
+Problem 11
+CREATE TABLE
+INSERT 0 4
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE FUNCTION
+frequentSets(0)
+  frequentset  
+---------------
+ {}
+ {A}
+ {A,B}
+ {A,B,C}
+ {A,B,C,D}
+ {A,B,C,D,E}
+ {A,B,C,D,E,F}
+ {A,B,C,D,F}
+ {A,B,C,E}
+ {A,B,C,E,F}
+ {A,B,C,F}
+ {A,B,D}
+ {A,B,D,E}
+ {A,B,D,E,F}
+ {A,B,D,F}
+ {A,B,E}
+ {A,B,E,F}
+ {A,B,F}
+ {A,C}
+ {A,C,D}
+ {A,C,D,E}
+ {A,C,D,E,F}
+ {A,C,D,F}
+ {A,C,E}
+ {A,C,E,F}
+ {A,C,F}
+ {A,D}
+ {A,D,E}
+ {A,D,E,F}
+ {A,D,F}
+ {A,E}
+ {A,E,F}
+ {A,F}
+ {B}
+ {B,C}
+ {B,C,D}
+ {B,C,D,E}
+ {B,C,D,E,F}
+ {B,C,D,F}
+ {B,C,E}
+ {B,C,E,F}
+ {B,C,F}
+ {B,D}
+ {B,D,E}
+ {B,D,E,F}
+ {B,D,F}
+ {B,E}
+ {B,E,F}
+ {B,F}
+ {C}
+ {C,D}
+ {C,D,E}
+ {C,D,E,F}
+ {C,D,F}
+ {C,E}
+ {C,E,F}
+ {C,F}
+ {D}
+ {D,E}
+ {D,E,F}
+ {D,F}
+ {E}
+ {E,F}
+ {F}
+(64 rows)
+
+frequentSets(1)
+ frequentset 
+-------------
+ {}
+ {A}
+ {A,B}
+ {A,B,C}
+ {A,B,C,D}
+ {A,B,C,D,E}
+ {A,B,C,E}
+ {A,B,C,E,F}
+ {A,B,C,F}
+ {A,B,D}
+ {A,B,D,E}
+ {A,B,E}
+ {A,B,E,F}
+ {A,B,F}
+ {A,C}
+ {A,C,D}
+ {A,C,D,E}
+ {A,C,E}
+ {A,C,E,F}
+ {A,C,F}
+ {A,D}
+ {A,D,E}
+ {A,E}
+ {A,E,F}
+ {A,F}
+ {B}
+ {B,C}
+ {B,C,D}
+ {B,C,D,E}
+ {B,C,E}
+ {B,C,E,F}
+ {B,C,F}
+ {B,D}
+ {B,D,E}
+ {B,E}
+ {B,E,F}
+ {B,F}
+ {C}
+ {C,D}
+ {C,D,E}
+ {C,E}
+ {C,E,F}
+ {C,F}
+ {D}
+ {D,E}
+ {E}
+ {E,F}
+ {F}
+(48 rows)
+
+frequentSets(2)
+ frequentset 
+-------------
+ {}
+ {A}
+ {A,B}
+ {A,B,C}
+ {A,B,C,E}
+ {A,B,E}
+ {A,C}
+ {A,C,E}
+ {A,E}
+ {A,E,F}
+ {A,F}
+ {B}
+ {B,C}
+ {B,C,E}
+ {B,E}
+ {C}
+ {C,E}
+ {E}
+ {E,F}
+ {F}
+(20 rows)
+
+frequentSets(3)
+ frequentset 
+-------------
+ {}
+ {A}
+ {A,E}
+ {E}
+(4 rows)
+
+frequentSets(4)
+ frequentset 
+-------------
+ {}
+ {A}
+ {A,E}
+ {E}
+(4 rows)
+
+frequentSets(5)
+ frequentset 
+-------------
+(0 rows)
+
+Problem 12 -- Practice problem
+Problem 12.a
+CREATE TABLE
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE FUNCTION
+DELETE 0
+INSERT 0 4
+ recursivehamiltonian 
+----------------------
+ t
+(1 row)
+
+DELETE 4
+INSERT 0 5
+ recursivehamiltonian 
+----------------------
+ f
+(1 row)
+
+Problem 12.b
+CREATE TABLE
+CREATE TABLE
+CREATE FUNCTION
+DELETE 5
+INSERT 0 4
+ nonrecursivehamiltonian 
+-------------------------
+ t
+(1 row)
+
+DELETE 4
+INSERT 0 5
+ nonrecursivehamiltonian 
+-------------------------
+ f
+(1 row)
+
+DELETE 5
+INSERT 0 10
+ nonrecursivehamiltonian 
+-------------------------
+ t
+(1 row)
+
+DELETE 10
+INSERT 0 9
+ nonrecursivehamiltonian 
+-------------------------
+ f
+(1 row)
+
+Problem 13
+CREATE TABLE
+INSERT 0 4
+CREATE TABLE
+INSERT 0 3
+CREATE TABLE
+INSERT 0 7
+CREATE FUNCTION
+CREATE FUNCTION
+ a 
+---
+ 1
+ 3
+ 5
+(3 rows)
+
+Problem 14 -- Practice problem
+DROP TABLE
+DROP TABLE
+CREATE TABLE
+CREATE TABLE
+INSERT 0 5
+INSERT 0 6
+DROP TABLE
+CREATE TABLE
+DROP TABLE
+CREATE TABLE
+INSERT 0 4
+INSERT 0 5
+DROP TABLE
+CREATE TABLE
+INSERT 0 9
+CREATE FUNCTION
+CREATE FUNCTION
+ a | b 
+---+---
+ 1 | 2
+ 3 | 6
+(2 rows)
+
+Problem 15
+DROP TABLE
+CREATE TABLE
+DROP TABLE
+CREATE TABLE
+INSERT 0 4
+INSERT 0 5
+DROP TABLE
+CREATE TABLE
+INSERT 0 9
+CREATE FUNCTION
+CREATE FUNCTION
+ a | b | c 
+---+---+---
+ 1 | 2 | 5
+ 1 | 2 | 7
+ 3 | 6 | 4
+ 3 | 6 | 8
+ 4 | 6 | 4
+ 4 | 6 | 8
+(6 rows)
+
+Problem 16 -- Practice problem
+DROP TABLE
+CREATE TABLE
+INSERT 0 6
+CREATE TABLE
+INSERT 0 6
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE FUNCTION
+ a |  bs   | sum_bs 
+---+-------+--------
+ 2 | {2,3} | 5
+ 3 | {2}   | 2
+(2 rows)
+
+Problem 17
+DROP TABLE
+DROP TABLE
+CREATE TABLE
+CREATE TABLE
+INSERT 0 7
+INSERT 0 10
+ k | v 
+---+---
+ 1 | 1
+ 1 | 2
+ 1 | 3
+ 2 | 2
+ 2 | 3
+ 3 | 2
+ 7 | 7
+(7 rows)
+
+ k | w 
+---+---
+ 1 | 1
+ 1 | 2
+ 1 | 3
+ 3 | 2
+ 4 | 1
+ 4 | 2
+ 5 | 1
+ 5 | 2
+ 6 | 4
+ 6 | 5
+(10 rows)
+
+Problem 17.a
+CREATE TYPE
+CREATE VIEW
+ k |          vws          
+---+-----------------------
+ 1 | ("{1,2,3}","{1,2,3}")
+ 2 | ("{2,3}",{})
+ 3 | ({2},{2})
+ 4 | ({},"{1,2}")
+ 5 | ({},"{1,2}")
+ 6 | ({},"{4,5}")
+ 7 | ({7},{})
+(7 rows)
+
+Problem 17.b
+ k | v 
+---+---
+ 2 | 2
+ 2 | 3
+ 7 | 7
+(3 rows)
+
+Problem 17.c
+ rk | sk 
+----+----
+  1 |  1
+  2 |  1
+  3 |  1
+  3 |  3
+  3 |  4
+  3 |  5
+(6 rows)
+
+DROP VIEW
+Problem 18-- Practice Problem
+CREATE TABLE
+CREATE TABLE
+INSERT 0 4
+INSERT 0 3
+DROP TABLE
+DROP TABLE
+CREATE VIEW
+CREATE VIEW
+CREATE VIEW
+Problem 18.a
+ x 
+---
+ 2
+ 4
+(2 rows)
+
+Problem 19.b
+ x 
+---
+ 5
+ 1
+ 3
+(3 rows)
+
+DROP DATABASE

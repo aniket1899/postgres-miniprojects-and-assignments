@@ -1,0 +1,162 @@
+CREATE DATABASE
+Problem 1
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+INSERT 0 19
+INSERT 0 7
+INSERT 0 19
+INSERT 0 13
+INSERT 0 5
+INSERT 0 38
+INSERT 0 79
+Problem 2
+ sid  | sname 
+------+-------
+ 1008 | Emma
+ 1009 | Hasan
+ 1014 | Deepa
+ 1018 | Arif
+(4 rows)
+
+Problem 3
+  deptname   |  deptname   
+-------------+-------------
+ Astronomy   | Physics
+ CS          | DataScience
+ DataScience | CS
+ Physics     | Astronomy
+(4 rows)
+
+Problem 4
+ sid  | sname 
+------+-------
+ 1005 | Megan
+ 1008 | Emma
+ 1009 | Hasan
+ 1010 | Linda
+ 1012 | Eric
+ 1013 | Lisa
+ 1014 | Deepa
+ 1017 | Latha
+ 1019 | John
+(9 rows)
+
+Problem 5
+  major  
+---------
+ Biology
+(1 row)
+
+Problem 6
+ sid  |  sname   | salary 
+------+----------+--------
+ 1001 | Jean     |  65000
+ 1002 | Vidya    |  45000
+ 1004 | Qin      |  55000
+ 1006 | Ryan     |  55000
+ 1007 | Danielle |  50000
+ 1008 | Emma     |  50000
+ 1009 | Hasan    |  60000
+ 1010 | Linda    |  55000
+ 1011 | Nick     |  70000
+ 1013 | Lisa     |  55000
+ 1014 | Deepa    |  50000
+ 1015 | Chris    |  60000
+ 1016 | YinYue   |  55000
+ 1017 | Latha    |  60000
+ 1018 | Arif     |  50000
+ 1019 | John     |  50000
+(16 rows)
+
+Problem 7
+  deptname   
+-------------
+ Biology
+ CS
+ DataScience
+ Mathematics
+ Physics
+(5 rows)
+
+Problem 8
+  deptname   | salary 
+-------------+--------
+ Biology     |  50000
+ CS          |  65000
+ DataScience |  60000
+ Mathematics |  70000
+ Physics     |  60000
+(5 rows)
+
+Problem 9
+ sid  | sname 
+------+-------
+ 1001 | Jean
+ 1010 | Linda
+ 1013 | Lisa
+ 1017 | Latha
+(4 rows)
+
+Problem 10
+ sid  | sname |  deptname   | salary 
+------+-------+-------------+--------
+ 1008 | Emma  | DataScience |  50000
+ 1009 | Hasan | CS          |  60000
+ 1014 | Deepa | CS          |  50000
+ 1018 | Arif  | CS          |  50000
+(4 rows)
+
+Problem 11
+ sid  | sname  
+------+--------
+ 1001 | Jean
+ 1002 | Vidya
+ 1003 | Anna
+ 1004 | Qin
+ 1006 | Ryan
+ 1008 | Emma
+ 1009 | Hasan
+ 1010 | Linda
+ 1012 | Eric
+ 1014 | Deepa
+ 1015 | Chris
+ 1016 | YinYue
+ 1018 | Arif
+(13 rows)
+
+Problem 12
+  major  
+---------
+ Biology
+ CS
+(2 rows)
+
+Problem 13
+ sid | sname 
+-----+-------
+(0 rows)
+
+Problem 18 b.
+ constraintSatisfied 
+---------------------
+ f
+(1 row)
+
+Problem 19
+ constaintSatisfied 
+--------------------
+ f
+(1 row)
+
+Problem 20
+ constraintSatisfied 
+---------------------
+ t
+(1 row)
+
+DROP DATABASE

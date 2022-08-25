@@ -1,0 +1,438 @@
+CREATE DATABASE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+INSERT 0 19
+INSERT 0 11
+INSERT 0 150
+INSERT 0 5
+INSERT 0 37
+INSERT 0 14
+Problem 6
+ bno  |    title    
+------+-------------
+ 2003 | DataScience
+ 2008 | Algorithms
+ 2010 | AI
+ 2007 | AI
+ 2004 | Databases
+ 2006 | Complexity
+ 2011 | Logic
+ 2001 | Databases
+(8 rows)
+
+Problem 6.a
+ bno  |    title    
+------+-------------
+ 2003 | DataScience
+ 2008 | Algorithms
+ 2010 | AI
+ 2007 | AI
+ 2004 | Databases
+ 2006 | Complexity
+ 2011 | Logic
+ 2001 | Databases
+(8 rows)
+
+ bno  |    title    
+------+-------------
+ 2010 | AI
+ 2003 | DataScience
+ 2003 | DataScience
+ 2008 | Algorithms
+ 2004 | Databases
+ 2003 | DataScience
+ 2001 | Databases
+ 2006 | Complexity
+ 2007 | AI
+ 2011 | Logic
+ 2004 | Databases
+(11 rows)
+
+ bno  |    title    
+------+-------------
+ 2001 | Databases
+ 2003 | DataScience
+ 2004 | Databases
+ 2006 | Complexity
+ 2007 | AI
+ 2008 | Algorithms
+ 2010 | AI
+ 2011 | Logic
+(8 rows)
+
+ bno  |    title    
+------+-------------
+ 2001 | Databases
+ 2003 | DataScience
+ 2004 | Databases
+ 2006 | Complexity
+ 2007 | AI
+ 2008 | Algorithms
+ 2010 | AI
+ 2011 | Logic
+(8 rows)
+
+Problem 6.b
+ bno  |    title    
+------+-------------
+ 2001 | Databases
+ 2003 | DataScience
+ 2004 | Databases
+ 2006 | Complexity
+ 2007 | AI
+ 2008 | Algorithms
+ 2010 | AI
+ 2011 | Logic
+(8 rows)
+
+ bno  |    title    
+------+-------------
+ 2001 | Databases
+ 2003 | DataScience
+ 2004 | Databases
+ 2006 | Complexity
+ 2007 | AI
+ 2008 | Algorithms
+ 2010 | AI
+ 2011 | Logic
+(8 rows)
+
+ bno  |    title    
+------+-------------
+ 2001 | Databases
+ 2003 | DataScience
+ 2004 | Databases
+ 2006 | Complexity
+ 2007 | AI
+ 2008 | Algorithms
+ 2010 | AI
+ 2011 | Logic
+(8 rows)
+
+Problem 7
+ sid  
+------
+ 1011
+(1 row)
+
+Problem 7.a
+ sid  
+------
+ 1011
+(1 row)
+
+ sid  
+------
+ 1011
+(1 row)
+
+ sid  
+------
+ 1011
+(1 row)
+
+ sid  
+------
+ 1011
+(1 row)
+
+ sid  
+------
+ 1011
+(1 row)
+
+Problem 7.b
+ sid  
+------
+ 1011
+(1 row)
+
+ sid  
+------
+ 1011
+(1 row)
+
+ sid  
+------
+ 1011
+(1 row)
+
+ sid  
+------
+ 1011
+(1 row)
+
+ sid  
+------
+ 1011
+(1 row)
+
+Problem 8
+ bno  |    title    
+------+-------------
+ 2003 | DataScience
+ 2004 | Databases
+ 2005 | Programming
+ 2006 | Complexity
+ 2007 | AI
+ 2008 | Algorithms
+ 2010 | AI
+ 2011 | Logic
+(8 rows)
+
+Problem 8.a
+ bno  |    title    
+------+-------------
+ 2003 | DataScience
+ 2004 | Databases
+ 2005 | Programming
+ 2006 | Complexity
+ 2007 | AI
+ 2008 | Algorithms
+ 2010 | AI
+ 2011 | Logic
+(8 rows)
+
+ bno  |    title    
+------+-------------
+ 2003 | DataScience
+ 2004 | Databases
+ 2005 | Programming
+ 2006 | Complexity
+ 2007 | AI
+ 2008 | Algorithms
+ 2010 | AI
+ 2011 | Logic
+(8 rows)
+
+ bno  |    title    
+------+-------------
+ 2007 | AI
+ 2005 | Programming
+ 2010 | AI
+ 2003 | DataScience
+ 2004 | Databases
+ 2008 | Algorithms
+ 2006 | Complexity
+ 2011 | Logic
+(8 rows)
+
+ bno  |    title    
+------+-------------
+ 2007 | AI
+ 2005 | Programming
+ 2010 | AI
+ 2003 | DataScience
+ 2004 | Databases
+ 2008 | Algorithms
+ 2006 | Complexity
+ 2011 | Logic
+(8 rows)
+
+ bno  |    title    
+------+-------------
+ 2007 | AI
+ 2005 | Programming
+ 2010 | AI
+ 2003 | DataScience
+ 2004 | Databases
+ 2008 | Algorithms
+ 2006 | Complexity
+ 2011 | Logic
+(8 rows)
+
+ bno  |    title    
+------+-------------
+ 2007 | AI
+ 2005 | Programming
+ 2010 | AI
+ 2003 | DataScience
+ 2004 | Databases
+ 2008 | Algorithms
+ 2006 | Complexity
+ 2011 | Logic
+(8 rows)
+
+Problem 8.b
+ bno  |    title    
+------+-------------
+ 2007 | AI
+ 2005 | Programming
+ 2010 | AI
+ 2003 | DataScience
+ 2004 | Databases
+ 2008 | Algorithms
+ 2006 | Complexity
+ 2011 | Logic
+(8 rows)
+
+ bno  |    title    
+------+-------------
+ 2007 | AI
+ 2005 | Programming
+ 2010 | AI
+ 2003 | DataScience
+ 2004 | Databases
+ 2008 | Algorithms
+ 2006 | Complexity
+ 2011 | Logic
+(8 rows)
+
+Problem 9
+ sid  | sname 
+------+-------
+ 1003 | Anna
+ 1006 | Ryan
+ 1008 | Emma
+ 1009 | Hasan
+ 1010 | Linda
+ 1011 | Nick
+ 1014 | Deepa
+ 1019 | John
+(8 rows)
+
+Problem 9.a
+ sid  | sname 
+------+-------
+ 1006 | Ryan
+ 1003 | Anna
+ 1014 | Deepa
+ 1009 | Hasan
+ 1011 | Nick
+ 1019 | John
+ 1010 | Linda
+ 1008 | Emma
+(8 rows)
+
+ sid  | sname 
+------+-------
+ 1006 | Ryan
+ 1003 | Anna
+ 1014 | Deepa
+ 1009 | Hasan
+ 1011 | Nick
+ 1019 | John
+ 1010 | Linda
+ 1008 | Emma
+(8 rows)
+
+ sid  | sname 
+------+-------
+ 1006 | Ryan
+ 1003 | Anna
+ 1014 | Deepa
+ 1009 | Hasan
+ 1011 | Nick
+ 1019 | John
+ 1010 | Linda
+ 1008 | Emma
+(8 rows)
+
+Problem 9.b
+ sid  | sname 
+------+-------
+ 1006 | Ryan
+ 1003 | Anna
+ 1014 | Deepa
+ 1009 | Hasan
+ 1011 | Nick
+ 1019 | John
+ 1010 | Linda
+ 1008 | Emma
+(8 rows)
+
+ sid  | sname 
+------+-------
+ 1006 | Ryan
+ 1003 | Anna
+ 1014 | Deepa
+ 1009 | Hasan
+ 1011 | Nick
+ 1019 | John
+ 1010 | Linda
+ 1008 | Emma
+(8 rows)
+
+Problem 10
+ bno  | value 
+------+-------
+ 2001 | t
+ 2002 | t
+ 2003 | t
+ 2004 | t
+ 2005 | t
+ 2006 | t
+ 2007 | t
+ 2008 | t
+ 2009 | f
+ 2010 | f
+ 2011 | f
+(11 rows)
+
+Problem 10.a
+ bno  | bool 
+------+------
+ 2001 | t
+ 2002 | t
+ 2003 | t
+ 2004 | t
+ 2005 | t
+ 2006 | t
+ 2007 | t
+ 2008 | t
+ 2009 | f
+ 2010 | f
+ 2011 | f
+(11 rows)
+
+ bno  | booleanvalue 
+------+--------------
+ 2001 | t
+ 2002 | t
+ 2003 | t
+ 2004 | t
+ 2005 | t
+ 2006 | t
+ 2007 | t
+ 2008 | t
+ 2009 | f
+ 2010 | f
+ 2011 | f
+(11 rows)
+
+ bno  | booleanvalue 
+------+--------------
+ 2001 | t
+ 2002 | t
+ 2003 | t
+ 2004 | t
+ 2005 | t
+ 2006 | t
+ 2007 | t
+ 2008 | t
+ 2009 | f
+ 2010 | f
+ 2011 | f
+(11 rows)
+
+Problem 10.b
+ bno1 | booleanvalue 
+------+--------------
+ 2001 | t
+ 2002 | t
+ 2003 | t
+ 2004 | t
+ 2005 | t
+ 2006 | t
+ 2007 | t
+ 2008 | t
+ 2009 | f
+ 2010 | f
+ 2011 | f
+(11 rows)
+
+DROP DATABASE

@@ -1,0 +1,286 @@
+
+1
+
+sid  |  sname   | major 
+------+----------+-------
+ 1001 | Jean     | CS
+ 1002 | Vidya    | CS
+ 1004 | Qin      | CS
+ 1005 | Megan    | CS
+ 1007 | Danielle | CS
+ 1011 | Nick     | CS
+ 1012 | Eric     | CS
+ 1013 | Lisa     | CS
+ 1015 | Chris    | CS
+ 1017 | Latha    | CS
+(10 rows)
+
+sid  |  sname   | major 
+------+----------+-------
+ 1001 | Jean     | CS
+ 1002 | Vidya    | CS
+ 1004 | Qin      | CS
+ 1005 | Megan    | CS
+ 1007 | Danielle | CS
+ 1011 | Nick     | CS
+ 1012 | Eric     | CS
+ 1013 | Lisa     | CS
+ 1015 | Chris    | CS
+ 1017 | Latha    | CS
+(10 rows)
+
+sid  |  sname   | major 
+------+----------+-------
+ 1001 | Jean     | CS
+ 1002 | Vidya    | CS
+ 1004 | Qin      | CS
+ 1005 | Megan    | CS
+ 1007 | Danielle | CS
+ 1011 | Nick     | CS
+ 1012 | Eric     | CS
+ 1013 | Lisa     | CS
+ 1015 | Chris    | CS
+ 1017 | Latha    | CS
+(10 rows)
+
+2.
+sid  | sname  
+------+--------
+ 1003 | Anna
+ 1008 | Emma
+ 1009 | Hasan
+ 1010 | Linda
+ 1014 | Deepa
+ 1016 | YinYue
+ 1018 | Arif
+(7 rows)
+sid  | sname  
+------+--------
+ 1003 | Anna
+ 1008 | Emma
+ 1009 | Hasan
+ 1010 | Linda
+ 1014 | Deepa
+ 1016 | YinYue
+ 1018 | Arif
+(7 rows)
+sid  | sname  
+------+--------
+ 1003 | Anna
+ 1008 | Emma
+ 1009 | Hasan
+ 1010 | Linda
+ 1014 | Deepa
+ 1016 | YinYue
+ 1018 | Arif
+(7 rows)
+
+3.
+sid  | bno  
+------+------
+ 1020 | 2012
+(1 row)
+
+sid  | bno  
+------+------
+ 1020 | 2012
+(1 row)
+
+sid  | bno  
+------+------
+ 1020 | 2012
+(1 row)
+
+4.
+
+sid  | sname  
+------+--------
+ 1003 | Anna
+ 1008 | Emma
+ 1009 | Hasan
+ 1010 | Linda
+ 1014 | Deepa
+ 1016 | YinYue
+ 1018 | Arif
+
+5.
+------+-------------
+ 2003 | DataScience
+(1 row)
+------+-------------
+ 2003 | DataScience
+(1 row)
+16.
+counts 
+--------
+   2034
+(1 row)
+
+6.
+sid  |  sname   
+------+----------
+ 1001 | Jean
+ 1002 | Vidya
+ 1004 | Qin
+ 1005 | Megan
+ 1007 | Danielle
+ 1011 | Nick
+ 1012 | Eric
+ 1013 | Lisa
+ 1015 | Chris
+ 1017 | Latha
+(10 rows)
+7.
+
+8.
+sid  | bno  
+------+------
+ 1020 | 2012
+(1 row)
+
+9.
+
+   major   
+-----------
+ English
+ Chemistry
+(2 rows)
+sid  | sname  
+------+--------
+ 1003 | Anna
+ 1008 | Emma
+ 1009 | Hasan
+ 1010 | Linda
+ 1014 | Deepa
+ 1016 | YinYue
+ 1018 | Arif
+(7 rows)
+
+17
+a.
+bno  |    title    | price 
+------+-------------+-------
+ 2001 | Databases   |    20
+ 2002 | AI          |    20
+ 2005 | Programming |    30
+ 2006 | Complexity  |    30
+ 2007 | AI          |    20
+ 2008 | Algorithms  |    40
+ 2010 | AI          |    30
+ 2011 | Logic       |    25
+(8 rows)
+
+b.
+bno  |    title    | price 
+------+-------------+-------
+ 2005 | Programming |    30
+ 2006 | Complexity  |    30
+ 2008 | Algorithms  |    40
+ 2010 | AI          |    30
+ 2011 | Logic       |    25
+(5 rows)
+
+c.
+bno | title | price 
+-----+-------+-------
+(0 rows)
+
+d.
+bno  |  title   | price 
+------+----------+-------
+ 2009 | Networks |    40
+(1 row)
+
+18.
+bno  |   title    | price 
+------+------------+-------
+ 2006 | Complexity |    30
+ 2010 | AI         |    30
+ 2011 | Logic      |    25
+(3 rows)
+
+assignment2=# SELECT * FROM CitingBook(2003,1018);
+ bno  |   title    | price 
+------+------------+-------
+ 2006 | Complexity |    30
+ 2009 | Networks   |    40
+ 2010 | AI         |    30
+ 2011 | Logic      |    25
+(4 rows)
+
+bno  |   title   | price 
+------+-----------+-------
+ 2001 | Databases |    20
+(1 row)
+
+19.
+bno  |   title   | price 
+------+-----------+-------
+ 2012 | Physics   |    45
+ 2004 | Databases |    25
+ 2013 | Physics   |    30
+(3 rows)
+
+bno  |    title    | price 
+------+-------------+-------
+ 2012 | Physics     |    45
+ 2003 | DataScience |    25
+ 2009 | Networks    |    40
+ 2013 | Physics     |    30
+(4 rows)
+
+bno  |  title  | price 
+------+---------+-------
+ 2012 | Physics |    45
+ 2013 | Physics |    30
+(2 rows)
+
+20
+stn1 | stn2 
+------+------
+    1 |    1
+    2 |    3
+    2 |    2
+    2 |    4
+    3 |    4
+    3 |    3
+    3 |    2
+    4 |    4
+    4 |    3
+    4 |    2
+    5 |    6
+    5 |    7
+    5 |    5
+    6 |    6
+    6 |    5
+    6 |    7
+    7 |    5
+    7 |    7
+    7 |    6
+    8 |   13
+    8 |   12
+    8 |    8
+    9 |   11
+    9 |    9
+    9 |   14
+    9 |   10
+   10 |    9
+   10 |   10
+   10 |   14
+   10 |   11
+   11 |   14
+   11 |    9
+   11 |   11
+   11 |   10
+   12 |   12
+   12 |   13
+   12 |    8
+   13 |    8
+   13 |   12
+   13 |   13
+   14 |   14
+   14 |   11
+   14 |    9
+   14 |   10
+   15 |   15
+(45 rows)

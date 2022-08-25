@@ -1,0 +1,802 @@
+-- Script for Assignment 4
+
+-- Creating database with full name
+
+
+-- Collaborated with Akshat Arvind and Renuka Srishti for this assignment
+
+CREATE DATABASE dirk;
+
+-- Connecting to database 
+\c dirk
+
+-- Relation schemas and instances for assignment 2
+
+CREATE TABLE Person(pid integer,
+                    pname text,
+                    city text,
+                    primary key (pid));
+
+CREATE TABLE Company(cname text,
+                     headquarter text,
+                     primary key (cname));
+
+CREATE TABLE Skill(skill text,
+                   primary key (skill));
+
+
+CREATE TABLE worksFor(pid integer,
+                      cname text,
+                      salary integer,
+                      primary key (pid),
+                      foreign key (pid) references Person (pid),
+                      foreign key (cname) references Company(cname));
+
+
+CREATE TABLE companyLocation(cname text,
+                             city text,
+                             primary key (cname, city),
+                             foreign key (cname) references Company (cname));
+
+
+CREATE TABLE personSkill(pid integer,
+                         skill text,
+                         primary key (pid, skill),
+                         foreign key (pid) references Person (pid) on delete cascade,
+                         foreign key (skill) references Skill (skill) on delete cascade);
+
+
+CREATE TABLE hasManager(eid integer,
+                        mid integer,
+                        primary key (eid, mid),
+                        foreign key (eid) references Person (pid),
+                        foreign key (mid) references Person (pid));
+
+CREATE TABLE Knows(pid1 integer,
+                   pid2 integer,
+                   primary key(pid1, pid2),
+                   foreign key (pid1) references Person (pid),
+                   foreign key (pid2) references Person (pid));
+
+
+
+INSERT INTO Person VALUES
+     (1001,'Jean','Cupertino'),
+     (1002,'Vidya', 'Cupertino'),
+     (1003,'Anna', 'Seattle'),
+     (1004,'Qin', 'Seattle'),
+     (1005,'Megan', 'MountainView'),
+     (1006,'Ryan', 'Chicago'),
+     (1007,'Danielle','LosGatos'),
+     (1008,'Emma', 'Bloomington'),
+     (1009,'Hasan', 'Bloomington'),
+     (1010,'Linda', 'Chicago'),
+     (1011,'Nick', 'MountainView'),
+     (1012,'Eric', 'Cupertino'),
+     (1013,'Lisa', 'Indianapolis'), 
+     (1014,'Deepa', 'Bloomington'), 
+     (1015,'Chris', 'Denver'),
+     (1016,'YinYue', 'Chicago'),
+     (1017,'Latha', 'LosGatos'),
+     (1018,'Arif', 'Bloomington'),
+     (1019,'John', 'NewYork');
+
+INSERT INTO Company VALUES
+     ('Apple', 'Cupertino'),
+     ('Amazon', 'Seattle'),
+     ('Google', 'MountainView'),
+     ('Netflix', 'LosGatos'),
+     ('Microsoft', 'Redmond'),
+     ('IBM', 'NewYork'),
+     ('ACM', 'NewYork'),
+     ('Yahoo', 'Sunnyvale');
+
+
+INSERT INTO worksFor VALUES
+     (1001,'Apple', 65000),
+     (1002,'Apple', 45000),
+     (1003,'Amazon', 55000),
+     (1004,'Amazon', 55000),
+     (1005,'Google', 60000),
+     (1006,'Amazon', 55000),
+     (1007,'Netflix', 50000),
+     (1008,'Amazon', 50000),
+     (1009,'Apple',60000),
+     (1010,'Amazon', 55000),
+     (1011,'Google', 70000), 
+     (1012,'Apple', 50000),
+     (1013,'Yahoo', 55000),
+     (1014,'Apple', 50000), 
+     (1015,'Amazon', 60000),
+     (1016,'Amazon', 55000),
+     (1017,'Netflix', 60000),
+     (1018,'Apple', 50000),
+     (1019,'Microsoft', 50000);
+
+INSERT INTO companyLocation VALUES
+   ('Apple', 'Bloomington'),
+   ('Amazon', 'Chicago'),
+   ('Amazon', 'Denver'),
+   ('Amazon', 'Columbus'),
+   ('Google', 'NewYork'),
+   ('Netflix', 'Indianapolis'),
+   ('Netflix', 'Chicago'),
+   ('Microsoft', 'Bloomington'),
+   ('Apple', 'Cupertino'),
+   ('Amazon', 'Seattle'),
+   ('Google', 'MountainView'),
+   ('Netflix', 'LosGatos'),
+   ('Microsoft', 'Redmond'),
+   ('IBM', 'NewYork'),
+   ('Yahoo', 'Sunnyvale');
+
+INSERT INTO Skill VALUES
+   ('Programming'),
+   ('AI'),
+   ('Networks'),
+   ('OperatingSystems'),
+   ('Databases');
+
+INSERT INTO personSkill VALUES
+ (1001,'Programming'),
+ (1001,'AI'),
+ (1002,'Programming'),
+ (1002,'AI'),
+ (1004,'AI'),
+ (1004,'Programming'),
+ (1005,'AI'),
+ (1005,'Programming'),
+ (1005,'Networks'),
+ (1006,'Programming'),
+ (1006,'OperatingSystems'),
+ (1007,'OperatingSystems'),
+ (1007,'Programming'),
+ (1009,'OperatingSystems'),
+ (1009,'Networks'),
+ (1010,'Networks'),
+ (1011,'Networks'),
+ (1011,'OperatingSystems'),
+ (1011,'AI'),
+ (1011,'Programming'),
+ (1012,'AI'),
+ (1012,'OperatingSystems'),
+ (1012,'Programming'),
+ (1013,'Programming'),
+ (1013,'OperatingSystems'),
+ (1013,'Networks'),
+ (1014,'OperatingSystems'),
+ (1014,'AI'),
+ (1014,'Networks'),
+ (1015,'Programming'),
+ (1015,'AI'),
+ (1016,'OperatingSystems'),
+ (1016,'AI'),
+ (1017,'Networks'),
+ (1017,'Programming'),
+ (1018,'AI'),
+ (1019,'Networks'),
+ (1010,'Databases'),
+ (1011,'Databases'),
+ (1013,'Databases'),
+ (1014,'Databases'),
+ (1017,'Databases'),
+ (1019,'Databases'),
+ (1005,'Databases'),
+ (1006,'AI'),
+ (1009,'Databases');
+ 
+
+INSERT INTO hasManager VALUES
+ (1004, 1003),
+ (1006, 1003),
+ (1015, 1003),
+ (1016, 1004),
+ (1016, 1006),
+ (1008, 1015),
+ (1010, 1008),
+ (1013, 1007),
+ (1017, 1013),
+ (1002, 1001),
+ (1009, 1001),
+ (1014, 1012),
+ (1011, 1005);
+
+
+INSERT INTO Knows VALUES
+ (1011,1009),
+ (1007,1016),
+ (1011,1010),
+ (1003,1004),
+ (1006,1004),
+ (1002,1014),
+ (1009,1005),
+ (1018,1009),
+ (1007,1017),
+ (1017,1019),
+ (1019,1013),
+ (1016,1015),
+ (1001,1012),
+ (1015,1011),
+ (1019,1006),
+ (1013,1002),
+ (1018,1004),
+ (1013,1007),
+ (1014,1006),
+ (1004,1014),
+ (1001,1014),
+ (1010,1013),
+ (1010,1014),
+ (1004,1019),
+ (1018,1007),
+ (1014,1005),
+ (1015,1018),
+ (1014,1017),
+ (1013,1018),
+ (1007,1008),
+ (1005,1015),
+ (1017,1014),
+ (1015,1002),
+ (1018,1013),
+ (1018,1010),
+ (1001,1008),
+ (1012,1011),
+ (1002,1015),
+ (1007,1013),
+ (1008,1007),
+ (1004,1002),
+ (1015,1005),
+ (1009,1013),
+ (1004,1012),
+ (1002,1011),
+ (1004,1013),
+ (1008,1001),
+ (1008,1019),
+ (1019,1008),
+ (1001,1019),
+ (1019,1001),
+ (1004,1003),
+ (1006,1003),
+ (1015,1003),
+ (1016,1004),
+ (1016,1006),
+ (1008,1015),
+ (1010,1008),
+ (1017,1013),
+ (1002,1001),
+ (1009,1001),
+ (1011,1005),
+ (1014,1012),
+ (1010,1002),
+ (1010,1012),
+ (1010,1018);
+
+\qecho 'Problem 1'
+
+
+SELECT P.PID, P.PNAME FROM
+PERSON P
+JOIN
+(SELECT H.MID, COUNT(H.EID) AS COUNTEMP FROM HASMANAGER H
+GROUP BY H.MID
+HAVING COUNT(H.EID) = 2) Q
+ON P.PID=Q.MID;
+
+\qecho 'Problem 2'
+
+CREATE OR REPLACE VIEW COUNTKNOWS1 AS
+SELECT K.PID1, COUNT(K.PID2) AS COUNTK
+FROM KNOWS K
+GROUP BY K.PID1;
+
+CREATE OR REPLACE VIEW COUNTKNOWS2 AS
+SELECT K.PID2, COUNT(K.PID1) AS COUNTK
+FROM KNOWS K
+GROUP BY K.PID2;
+
+SELECT DISTINCT P.PID, P.PNAME FROM PERSON P
+JOIN COUNTKNOWS1 CK1 ON CK1.PID1 = P.PID
+JOIN COUNTKNOWS2 CK2 ON CK2.PID2 = P.PID
+WHERE CK1.COUNTK > CK2.COUNTK;
+
+\qecho 'Problem 3'
+
+DROP VIEW SKILLS_LE2;
+CREATE OR REPLACE VIEW SKILLS_LE2 AS
+SELECT PID, COUNT(1) FROM PERSONSKILL 
+GROUP BY PID
+HAVING COUNT(1) >= 2;
+
+
+SELECT DISTINCT P.PID, P.PNAME FROM KNOWS K1 JOIN PERSON P ON K1.PID2 = P.PID
+WHERE 
+(
+SELECT COUNT(K2.PID1) FROM 
+	KNOWS K2 JOIN SKILLS_LE2 L2 ON K2.PID1 = L2.PID AND K2.PID2 = K1.PID2
+) <=3;
+
+\qecho 'Problem 4'
+
+CREATE OR REPLACE VIEW MAXSAL AS
+SELECT W.CNAME, MAX(W.SALARY) MSAL FROM WORKSFOR W
+GROUP BY W.CNAME;
+
+
+
+CREATE OR REPLACE VIEW MAXSALCMP AS 
+SELECT  Q.CNAME, COUNT(1)  AS   COUNT_MAXSAL_EMP 
+FROM (SELECT W.PID, W.CNAME FROM MAXSAL MS JOIN WORKSFOR W ON MS.CNAME=W.CNAME
+WHERE MS.MSAL = W.SALARY) Q
+GROUP BY Q.CNAME;
+
+	
+SELECT MSE.CNAME FROM  MAXSALCMP MSE 
+WHERE MSE.COUNT_MAXSAL_EMP = (SELECT MAX(MSE1.COUNT_MAXSAL_EMP)
+FROM MAXSALCMP MSE1);
+
+\qecho 'Problem 5'
+SELECT COUNT(1) FROM (SELECT Q.PID1 FROM (SELECT K.PID1 FROM KNOWS K
+				   GROUP BY K.PID1
+				   HAVING COUNT(K.PID2) >= 2) Q
+				   INNER JOIN PERSONSKILL PS ON Q.PID1 = PS.PID
+GROUP BY Q.PID1
+HAVING COUNT(1) > (
+					SELECT MAX(CTS.COUNT_SKILLS) 
+					FROM (SELECT COUNT(1) AS COUNT_SKILLS FROM PERSONSKILL PS1 JOIN KNOWS K ON PS1.PID = K.PID2 AND K.PID1 = Q.PID1
+						 GROUP BY PS1.PID 
+						  ) CTS)
+					 ) QCNT;
+
+\qecho 'Problem 6'
+CREATE OR REPLACE VIEW AVGSAL AS
+SELECT CNAME, AVG(SALARY) AVSAL FROM WORKSFOR
+GROUP BY CNAME
+HAVING AVG(SALARY)>=50000 AND AVG(SALARY)<=60000;
+
+CREATE OR REPLACE VIEW BSAL AS
+SELECT A.CNAME, COUNT(W.PID) FROM WORKSFOR W RIGHT JOIN AVGSAL A ON W.CNAME = A.CNAME AND W.SALARY < A.AVSAL
+GROUP BY A.CNAME;
+
+CREATE OR REPLACE VIEW ASAL AS
+SELECT A.CNAME, COUNT(W.PID) FROM WORKSFOR W RIGHT JOIN AVGSAL A ON W.CNAME = A.CNAME AND W.SALARY >= A.AVSAL 
+GROUP BY A.CNAME;
+
+SELECT AV.CNAME, AV.AVSAL AS average_salary_at_company, B.COUNT, A.COUNT
+FROM AVGSAL AV INNER JOIN ASAL A ON A.CNAME = AV.CNAME INNER JOIN BSAL B ON B.CNAME = AV.CNAME 
+ORDER BY 1;
+
+\qecho 'Problem 7'
+CREATE OR REPLACE VIEW AP AS
+SELECT PID1 AS PID, COUNT(PID2) AS CT_A FROM KNOWS
+GROUP BY PID1;
+
+CREATE OR REPLACE VIEW BP AS
+SELECT PID2 AS PID, COUNT(PID1) AS CT_B FROM KNOWS
+GROUP BY PID2;
+
+SELECT QOUT.C AS "a(p)+b(p)", COUNT(1) AS N FROM 
+(SELECT AP.CT_A + BP.CT_B AS C
+ FROM 
+(SELECT DISTINCT Q1.PID FROM 
+ (SELECT PID FROM AP UNION SELECT PID FROM BP) Q1 ) Q INNER JOIN AP ON AP.PID = Q.PID
+ INNER JOIN BP ON  BP.PID = Q.PID) QOUT
+ GROUP BY QOUT.C;
+
+\qecho 'Problem 8'
+
+CREATE OR REPLACE VIEW GOOGLESKILLS AS
+SELECT DISTINCT PS.SKILL FROM PERSONSKILL PS INNER JOIN WORKSFOR W ON PS.PID=W.PID AND W.CNAME = 'Google';
+
+SELECT P.PID, P.PNAME FROM PERSON P LEFT JOIN (SELECT PR.PID FROM (SELECT DISTINCT PID FROM PERSONSKILL) PR
+WHERE (SELECT COUNT(*) FROM (SELECT G.SKILL FROM GOOGLESKILLS G 
+					  INTERSECT
+					  SELECT PS1.SKILL FROM PERSONSKILL PS1 
+					 	WHERE PS1.PID = PR.PID) Q) =
+(SELECT count(PS1.SKILL) FROM PERSONSKILL PS1 
+					 	WHERE PS1.PID = PR.PID)) Q1
+						ON  Q1.PID=P.PID
+						LEFT JOIN PERSONSKILL PS1 ON PS1.PID=P.PID
+						GROUP BY P.PID
+						HAVING COUNT(PS1.SKILL)<2
+						ORDER BY 1;
+
+\qecho 'Problem 9'
+
+
+CREATE OR REPLACE VIEW WF_AMAZON AS
+SELECT PID FROM WORKSFOR WHERE CNAME = 'Amazon';
+
+ SELECT W1.PID, W2.PID FROM WORKSFOR W1, WORKSFOR W2
+ WHERE W1.PID <> W2.PID
+ AND 
+ (SELECT COUNT(Q.PID1) 
+  FROM
+ 	 (SELECT K.PID1 
+ 	  FROM KNOWS K INNER JOIN WF_AMAZON WA ON K.PID1=WA.PID
+ 	  AND K.PID2 = W1.PID
+ 	  EXCEPT
+ 	  SELECT K.PID1 
+ 	  FROM KNOWS K INNER JOIN WF_AMAZON WA ON K.PID1=WA.PID
+ 	  AND K.PID2 = W2.PID
+	 ) Q
+ 	) = 0
+ AND 
+ (SELECT COUNT(Q.PID1) 
+  FROM
+ 	 (SELECT K.PID1 
+ 	  FROM KNOWS K INNER JOIN WF_AMAZON WA ON K.PID1=WA.PID
+ 	  AND K.PID2 = W2.PID
+ 	  EXCEPT
+ 	  SELECT K.PID1 
+ 	  FROM KNOWS K INNER JOIN WF_AMAZON WA ON K.PID1=WA.PID
+ 	  AND K.PID2 = W1.PID
+	 ) Q
+ 	) = 0;
+
+\qecho 'Problem 10'
+
+SELECT C.CNAME FROM COMPANYLOCATION C
+WHERE C.CITY = 'Bloomington'
+AND (SELECT COUNT(W.PID) FROM WORKSFOR W
+	WHERE W.CNAME = C.CNAME
+	AND W.SALARY >=55000)
+	>0;
+
+\qecho 'Problem 11'
+SELECT DISTINCT PS1.SKILL AS S1, PS2.SKILL AS S2
+FROM
+PERSONSKILL PS1, PERSONSKILL PS2
+WHERE PS1.SKILL <> PS2.SKILL 
+AND (
+	SELECT COUNT(P1.PID)%2=0 FROM
+	PERSONSKILL P1 INNER JOIN PERSONSKILL P2 ON P1.PID=P2.PID 
+	where P1.SKILL = PS1.SKILL AND P2.SKILL=PS2.SKILL
+	);
+
+
+
+\qecho 'Problem 12'
+
+CREATE OR REPLACE VIEW A_LT55 AS
+SELECT PID FROM WORKSFOR
+WHERE CNAME = 'Apple' AND SALARY < 55000;
+
+SELECT DISTINCT K.PID1 FROM KNOWS K
+WHERE 
+(SELECT COUNT(APL.PID)
+FROM KNOWS K2,  A_LT55 APL WHERE APL.PID = K2.PID2 AND K.PID1=K2.PID1)
+<
+(SELECT COUNT(APL.PID)
+FROM A_LT55 APL);
+--  AND 
+-- (SELECT COUNT(APL.PID)
+-- FROM KNOWS K2,  A_LT55 APL WHERE APL.PID = K2.PID2 AND K.PID1=K2.PID1) >0
+
+
+\qecho 'Problem 13'
+
+CREATE FUNCTION COUNTSKILLS(int) RETURNS INTEGER AS 
+	$$ SELECT COUNT(SKILL) FROM PERSONSKILL WHERE PID = $1
+	$$ LANGUAGE SQL;
+
+-- TEST FUNCTION
+-- SELECT COUNTSKILLS(P.PID) FROM PERSON P
+-- WHERE P.PID=1001;
+
+-- select q.n, count(1) from (
+	
+SELECT P1.PID AS P1, P2.PID AS P2, COUNTSKILLS(P1.PID) AS N FROM PERSON P1, PERSON P2
+WHERE P1.PID <> P2.PID
+AND COUNTSKILLS(P1.PID) = COUNTSKILLS(P2.PID) 
+ORDER BY 3;
+-- ) q
+-- group by q.n ;
+
+\qecho 'Problem 14'
+
+\qecho 'Problem 15'
+
+
+-- Connect to default database
+\c postgres
+
+-- Drop database created for this assignment
+DROP DATABASE dirk;
+
+
+-- 14
+CREATE TABLE PERSONKNOWSNUMBEROFPERSONS(PID INTEGER, NAME TEXT, CT_PERSONS INTEGER);
+
+CREATE OR REPLACE FUNCTION ADD_PERSON()
+RETURNS TRIGGER AS
+$$
+BEGIN
+  IF EXISTS (SELECT 1 FROM   PERSONKNOWSNUMBEROFPERSONS P WHERE  P.PID = NEW.PID1) 
+  THEN  
+  	UPDATE PERSONKNOWSNUMBEROFPERSONS SET CT_PERSONS = CT_PERSONS + 1 WHERE PID = NEW.PID1;
+  ELSE  
+  	INSERT INTO PERSONKNOWSNUMBEROFPERSONS
+      VALUES(NEW.PID1, 
+			 (SELECT P.NAME FROM PERSON P WHERE P.PID = NEW.PID1),
+			 1);
+  END IF;
+  	RETURN NEW;
+END;
+$$ LANGUAGE 'plpgsql';
+
+
+CREATE OR REPLACE TRIGGER T_ADD_PERSON
+BEFORE INSERT ON KNOWS
+FOR EACH ROW
+EXECUTE PROCEDURE ADD_PERSON();
+
+
+CREATE OR REPLACE FUNCTION REMOVE_PERSON() 
+RETURNS TRIGGER AS
+$$
+BEGIN
+  IF (SELECT P.CT_PERSONS FROM   PERSONKNOWSNUMBEROFPERSONS P WHERE P.PID=OLD.PID1) >= 1
+  THEN
+  	UPDATE PERSONKNOWSNUMBEROFPERSONS SET CT_PERSONS  = CT_PERSONS - 1 WHERE PID = OLD.PID1;
+  ELSE  
+  	DELETE FROM PERSONKNOWSNUMBEROFPERSONS WHERE PID = OLD.PID1;
+  END IF;
+  RETURN OLD;
+END;
+$$ LANGUAGE 'plpgsql';
+
+CREATE OR REPLACE TRIGGER T_REOMVE_PERSON
+BEFORE DELETE ON KNOWS
+FOR EACH ROW
+EXECUTE PROCEDURE REMOVE_PERSON(); 
+ 
+
+
+--15
+
+-- create database dirkasst4p2;
+
+-- \c dirkasst4p2;
+
+
+-- problem 15
+
+
+CREATE TABLE STUDENT (SID INT, SNAME TEXT NOT NULL, 
+					 PRIMARY KEY (SID)
+					);
+
+CREATE TABLE COURSE (CNO INT, TOTAL INT DEFAULT 0, MAX INT NOT NULL, 
+					 PRIMARY KEY (CNO)
+					);
+					
+ 
+CREATE TABLE PREREQUISITE (CNO INT, PREREQ INT,
+							FOREIGN KEY (CNO) REFERENCES COURSE (CNO),
+							FOREIGN KEY (PREREQ) REFERENCES COURSE (CNO)
+);
+
+CREATE TABLE HASTAKEN (SID INT, CNO INT,
+					   PRIMARY KEY (SID, CNO), 
+					   FOREIGN KEY (SID) REFERENCES STUDENT (SID),
+				   FOREIGN KEY (CNO) REFERENCES COURSE (CNO)
+				   );
+
+
+
+CREATE TABLE ENROLL (SID INT, CNO INT,
+				   PRIMARY KEY (SID, CNO), 
+				   FOREIGN KEY (SID) REFERENCES STUDENT (SID),
+				   FOREIGN KEY (CNO) REFERENCES COURSE (CNO)
+				   );
+				   
+CREATE TABLE WAITLIST (SID INT, CNO INT, POSITION INT NOT NULL,
+					   PRIMARY KEY (SID, CNO), 
+					   FOREIGN KEY (SID) REFERENCES STUDENT (SID),
+				   FOREIGN KEY (CNO) REFERENCES COURSE (CNO)
+					   );
+
+-- INSERTS
+INSERT INTO COURSE VALUES (100, 0, 5), (200, 0, 4), (300, 0, 3), (400, 0, 2), (500, 0, 1);
+INSERT INTO STUDENT VALUES (1, 'A'), (2, 'B'), (3,'C'), (4, 'D'), (5, 'E');
+INSERT INTO PREREQUISITE VALUES (400, 300), (400, 200), (500, 400), (500, 300);
+INSERT INTO HASTAKEN VALUES (2,200), (2,300),(3, 100), (3, 200), (4,200), (4,300);
+
+--1
+
+--DELETE
+CREATE OR REPLACE FUNCTION DEL_COURSE() RETURNS TRIGGER AS
+$$ 
+BEGIN 
+IF OLD.CNO IN (SELECT CNO FROM COURSE)
+THEN 
+RAISE EXCEPTION 'DELETION ON COURSE NOT ALLOWED';
+END IF;
+RETURN NULL;
+END;
+$$ LANGUAGE 'plpgsql';
+
+
+CREATE OR REPLACE  TRIGGER DELETE_ON_COURSE
+BEFORE DELETE ON COURSE
+FOR EACH ROW
+EXECUTE PROCEDURE DEL_COURSE();
+
+--INSERT
+CREATE OR REPLACE FUNCTION INSERT_COURSE() RETURNS TRIGGER AS
+$$ 
+BEGIN 
+IF NEW.CNO NOT IN (SELECT CNO FROM COURSE)
+THEN 
+RAISE EXCEPTION 'INSERTION ON COURSE NOT ALLOWED';
+END IF;
+RETURN NULL;
+END;
+$$ LANGUAGE 'plpgsql';
+
+CREATE OR REPLACE  TRIGGER INSERT_ON_COURSE
+BEFORE INSERT ON COURSE
+FOR EACH ROW
+EXECUTE PROCEDURE INSERT_COURSE();
+
+-- UPDATE
+CREATE OR REPLACE FUNCTION UPDATE_COURSE() RETURNS TRIGGER AS
+$$ 
+BEGIN 
+
+IF NEW.CNO IN (SELECT CNO FROM COURSE)
+THEN 
+	IF NEW.MAX <> OLD.MAX THEN
+		RAISE EXCEPTION 'UPDATE ON COURSE.MAX NOT ALLOWED';
+        RETURN NULL;
+	END IF;
+	IF NEW.CNO <> OLD.CNO THEN
+		RAISE EXCEPTION 'UPDATE ON COURSE.MAX NOT ALLOWED';
+        RETURN NULL;
+	END IF;
+    RETURN NEW;
+END IF;
+
+END;
+$$ LANGUAGE 'plpgsql';
+
+CREATE OR REPLACE TRIGGER UPDATE_ON_COURSE
+BEFORE UPDATE ON COURSE
+FOR EACH ROW
+EXECUTE PROCEDURE UPDATE_COURSE();
+
+
+-- 1 TEST CASES 
+-- UPDATE  COURSE SET MAX=1 WHERE CNO=1001;
+-- INSERT INTO COURSE VALUES (1002, 0, 1 );
+-- DELETE FROM COURSE WHERE CNO=100;
+
+
+-- 2/3
+
+
+
+
+
+
+--2 
+CREATE OR REPLACE FUNCTION UPDATE_COURSE() RETURNS TRIGGER AS
+$$ 
+BEGIN 
+
+IF NEW.CNO IN (SELECT CNO FROM COURSE)
+THEN 
+	IF NEW.MAX <> OLD.MAX THEN
+		RAISE EXCEPTION 'UPDATE ON COURSE.MAX NOT ALLOWED';
+        RETURN NULL;
+	END IF;
+	IF NEW.CNO <> OLD.CNO THEN
+		RAISE EXCEPTION 'UPDATE ON COURSE.MAX NOT ALLOWED';
+        RETURN NULL;
+	END IF;
+    RETURN NEW;
+END IF;
+END;
+$$ LANGUAGE 'plpgsql';
+
+CREATE OR REPLACE FUNCTION ENROLLSTUDENT() RETURNS TRIGGER
+AS
+$$
+BEGIN
+IF EXISTS (SELECT  P.PREREQ FROM PREREQUISITE P
+		  WHERE P.CNO=NEW.CNO
+		  EXCEPT
+		  SELECT H.CNO FROM HASTAKEN H 
+--  		   JOIN PREREQUISITE P
+--  		  ON
+ 		   WHERE
+--   		   H.CNO = P.CNO  
+--  		    H.CNO=NEW.CNO
+ 		    H.SID=NEW.SID
+		  )
+		   THEN
+    RAISE EXCEPTION 'PREREQUISITES NOT MET';
+RETURN NULL;
+ELSE 
+	IF 
+		(SELECT C.MAX>C.TOTAL FROM COURSE C WHERE C.CNO=NEW.CNO) THEN 
+-- 		RAISE EXCEPTION 'N1';
+		BEGIN
+		UPDATE COURSE  SET TOTAL=TOTAL+1 WHERE CNO=NEW.CNO ;
+		END;
+			 RETURN NEW;
+	ELSEIF 
+		  (SELECT C.MAX=C.TOTAL FROM COURSE C WHERE C.CNO=NEW.CNO) THEN 
+		  INSERT INTO WAITLIST VALUES(NEW.SID,NEW.CNO,(
+				SELECT COUNT(W.SID)+1 FROM WAITLIST W RIGHT JOIN COURSE C ON W.CNO=C.CNO
+				 
+				GROUP BY C.CNO HAVING C.CNO = NEW.CNO
+
+		  ));
+		  RETURN NULL;
+
+	END IF;
+
+END IF;
+END;
+$$ LANGUAGE 'plpgsql';
+
+CREATE OR REPLACE  TRIGGER ENROLL_STUDENT_BEFORE
+BEFORE INSERT ON ENROLL
+FOR EACH ROW
+EXECUTE PROCEDURE ENROLLSTUDENT();
+
+
+--4
+CREATE OR REPLACE FUNCTION REMOVE_ENROLLMENT() RETURNS TRIGGER AS
+$$
+declare del_id int;
+declare DEL_CNO int;
+
+BEGIN
+
+IF EXISTS (SELECT 1 FROM WAITLIST W WHERE W.CNO=OLD.CNO) THEN
+	begin
+	update course set total = 0 where cno=OLD.CNO;
+	DEL_CNO = OLD.CNO;
+	del_id = (SELECT  W.SID FROM  WAITLIST W WHERE W.CNO = OLD.CNO AND W.POSITION=1);
+	DELETE FROM WAITLIST W WHERE W.CNO=OLD.CNO AND W.POSITION=1;
+	UPDATE WAITLIST W SET POSITION = POSITION-1 WHERE CNO=DEL_CNO;
+	
+	
+	INSERT INTO ENROLL VALUES (DEL_ID, del_cno);
+    update course set total = max where cno=DEL_CNO;
+
+end;
+ELSE
+	UPDATE COURSE SET TOTAL = TOTAL - 1 WHERE CNO=NEW.CNO;
+
+END IF;
+RETURN NULL;
+END;
+$$ LANGUAGE 'plpgsql';
+
+CREATE OR REPLACE TRIGGER T_REMOVE_ENROLLMENT
+after DELETE ON ENROLL
+FOR EACH ROW
+EXECUTE PROCEDURE REMOVE_ENROLLMENT();
+
+--       select * from waitlist;
+--     delete from enroll where sid=2;
+--     select * from ENROLL;
+-- select * from prerequisite;
+
+--  delete from waitlist;
+-- delete from enroll;
+-- update course set total = 0;
+--    insert into enroll values (2, 400), (5,400), (4, 400);
+-- delete from enroll where sid=2;
+--   select * from waitlist;
+--    select * from enroll;
+--  select * from course;
+
+
+
+
+
+
+
